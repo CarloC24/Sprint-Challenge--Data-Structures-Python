@@ -17,14 +17,10 @@ duplicates = []
 
 
 def duplicatesfinder(names_1, names_2):
-    names_1 = list(set(names_1))
-    names_2 = list(set(names_2))
-    namesets = names_1 + names_2
+    namesets = list(set(names_1)) + list(set(names_2))
     for name in namesets:
         if name in cache.cache:
-            print(name)
-            duplicatename = cache.get(name)
-            duplicates.append(duplicatename)
+            duplicates.append(cache.get(name))
         else:
             cache.set(name, name)
 
